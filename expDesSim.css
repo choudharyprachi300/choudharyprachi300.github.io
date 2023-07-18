@@ -110,4 +110,5 @@ body.selected {
 
 #image{
   position:absolute;
+  pointer-events: none;
 }

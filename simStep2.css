@@ -176,6 +176,7 @@ h6 {
 
 #image{
   position:absolute;
+  pointer-events: none;
 }
 
 .sliders {
