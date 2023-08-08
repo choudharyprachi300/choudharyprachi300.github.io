@@ -16,6 +16,18 @@ $(document).mousemove(function(e) {
   var isCursorOverButtonBack = e.clientX >= buttonRectBack.left && e.clientX <= buttonRectBack.right && e.clientY >= buttonRectBack.top && e.clientY <= buttonRectBack.bottom;
   var isCursorOverButtonStart = e.clientX >= buttonRectStart.left && e.clientX <= buttonRectStart.right && e.clientY >= buttonRectStart.top && e.clientY <= buttonRectStart.bottom;
 
+
+  var buttonElementTex1 = $(".texture1");
+  var buttonElementTex2 = $(".texture2");
+  var buttonElementTex3 = $(".texture3");
+  var buttonRectTex1 = buttonElementTex1[0].getBoundingClientRect();
+  var buttonRectTex2 = buttonElementTex2[0].getBoundingClientRect();
+  var buttonRectTex3 = buttonElementTex3[0].getBoundingClientRect();
+  var isCursorOverButtonTex1 = e.clientX >= buttonRectTex1.left && e.clientX <= buttonRectTex1.right && e.clientY >= buttonRectTex1.top && e.clientY <= buttonRectTex1.bottom;
+  var isCursorOverButtonTex2 = e.clientX >= buttonRectTex2.left && e.clientX <= buttonRectTex2.right && e.clientY >= buttonRectTex2.top && e.clientY <= buttonRectTex2.bottom;
+  var isCursorOverButtonTex3 = e.clientX >= buttonRectTex3.left && e.clientX <= buttonRectTex3.right && e.clientY >= buttonRectTex3.top && e.clientY <= buttonRectTex3.bottom;
+
+
   // Check if the cursor is over the text element
   var textElement = $("#myLink");
   var textRect = textElement[0].getBoundingClientRect();
@@ -30,6 +42,12 @@ $(document).mousemove(function(e) {
   } else if (isCursorOverButtonStart) {
     cursorImage = "media/icons/cursor4.png"; // Cursor image for the start button
   } else if (isCursorOverText) {
+    cursorImage = "media/icons/cursor4.png"; // Cursor image for the text
+  }else if (isCursorOverButtonTex1) {
+    cursorImage = "media/icons/cursor4.png"; // Cursor image for the text
+  }else if (isCursorOverButtonTex2) {
+    cursorImage = "media/icons/cursor4.png"; // Cursor image for the text
+  }else if (isCursorOverButtonTex3) {
     cursorImage = "media/icons/cursor4.png"; // Cursor image for the text
   }
   image.attr("src", cursorImage);
@@ -55,6 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   textElement.addEventListener('click', function() {
-    window.location.href = 'expDesSim.html'; // Replace with the desired URL of the text page
+    window.location.href = 'index.html'; // Replace with the desired URL of the text page
   });
 });

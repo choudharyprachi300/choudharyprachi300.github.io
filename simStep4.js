@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var textElement = document.getElementById('myLink');
 
   buttonElementHome.addEventListener('click', function() {
-    window.location.href = 'expDesSim.html'; // Replace with the desired URL of the button page
+    window.location.href = 'index.html'; // Replace with the desired URL of the button page
   });
 
   buttonElementBack.addEventListener('click', function() {
@@ -55,6 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   textElement.addEventListener('click', function() {
-    window.location.href = 'expDesSim.html'; // Replace with the desired URL of the text page
+    window.location.href = 'index.html'; // Replace with the desired URL of the text page
   });
 });

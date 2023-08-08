@@ -17,7 +17,7 @@ $(document).mousemove(function(e) {
   var isCursorOverButtonStart = e.clientX >= buttonRectStart.left && e.clientX <= buttonRectStart.right && e.clientY >= buttonRectStart.top && e.clientY <= buttonRectStart.bottom;
 
   var sliderElementSpaces = $(".spaces");
-  var sliderElementFloors = $(".floors");
+  var sliderElementFloors = $(".floorss");
   var sliderRectSpaces = sliderElementSpaces[0].getBoundingClientRect();
   var sliderRectFloors = sliderElementFloors[0].getBoundingClientRect();
   var isCursorOverSliderSpaces = e.clientX >= sliderRectSpaces.left && e.clientX <= sliderRectSpaces.right && e.clientY >= sliderRectSpaces.top && e.clientY <= sliderRectSpaces.bottom;
@@ -67,6 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   textElement.addEventListener('click', function() {
-    window.location.href = 'expDesSim.html'; // Replace with the desired URL of the text page
+    window.location.href = 'index.html'; // Replace with the desired URL of the text page
   });
 });

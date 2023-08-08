@@ -1,27 +1,12 @@
-console.log("hello world");
-
-	var windowWidth = $(window).width();
-
-$(window).on("mousemove", function(evt) {
-  var mouseX = evt.pageX;
-  var isSecondHalf = mouseX > windowWidth * (1 / 2);
-
-  if (isSecondHalf) {
-    $('body').addClass("selected");
-  } else {
-    $('body').removeClass("selected");
-  }
-});
 
 
-	var image = $("#image");
+var image = $("#image");
 var speed = 0.5; // Adjust the speed as needed (0.1 is a sample value)
 
 $(document).mousemove(function(e) {
   var mouseX = e.pageX - (image.width() / 2);
   var mouseY = e.pageY - (image.height() / 2);
 
-  // Check if the cursor is in the second half of the screen
   var windowWidth = $(window).width();
   var isSecondHalf = mouseX > windowWidth * (1/2)- (image.width() / 2);
 
@@ -52,6 +37,8 @@ $(document).ready(function() {
 
     if (mouseX < halfScreenWidth) {
       window.location.href = "simStep1.html";
+    }else if (mouseX >= halfScreenWidth) {
+      window.location.href = "renPage.html";
     }
   });
 });

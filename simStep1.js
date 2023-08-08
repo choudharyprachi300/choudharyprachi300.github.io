@@ -42,14 +42,61 @@ document.addEventListener('DOMContentLoaded', function() {
   var textElement = document.getElementById('myLink');
 
   buttonElementNext.addEventListener('click', function() {
-    window.location.href = 'simStep2.html'; // Replace with the desired URL of the button page
+    if ($('.site1').attr('src') === 'media/1SiteHighlited.png' || $('.site2').attr('src') === 'media/2SiteHighlited.png' || $('.site3').attr('src') === 'media/3SiteHighlited.png') {
+      window.location.href = 'simStep2.html'; // Replace with the desired URL of the button page
+    }
+    else {
+     $('#message').fadeIn().delay(1500).fadeOut();
+    }
   });
 
   buttonElementBack.addEventListener('click', function() {
-    window.location.href = 'expDesSim.html'; // Replace with the desired URL of the button page
+    window.location.href = 'index.html'; // Replace with the desired URL of the button page
   });
 
   textElement.addEventListener('click', function() {
-    window.location.href = 'expDesSim.html'; // Replace with the desired URL of the text page
+    window.location.href = 'index.html'; // Replace with the desired URL of the text page
+  });
+});
+
+$(document).ready(function() {
+  $('.site1').click(function() {
+    $('.site2').attr('src', 'media/2Site.png')
+    $('.site3').attr('src', 'media/3Site.png')
+    var currentImage = $(this);
+    
+    if (currentImage.attr('src') === 'media/1Site.png') {
+      currentImage.attr('src', 'media/1SiteHighlited.png');
+    } else {
+      currentImage.attr('src', 'media/1Site.png');
+    }
+  });
+});
+
+$(document).ready(function() {
+  $('.site2').click(function() {
+    $('.site1').attr('src', 'media/1Site.png')
+    $('.site3').attr('src', 'media/3Site.png')
+    var currentImage = $(this);
+    
+    if (currentImage.attr('src') === 'media/2Site.png') {
+      currentImage.attr('src', 'media/2SiteHighlited.png');
+    } else {
+      currentImage.attr('src', 'media/2Site.png');
+    }
+  });
+});
+
+$(document).ready(function() {
+  $('.site3').click(function() {
+    $('.site1').attr('src', 'media/1Site.png')
+    $('.site2').attr('src', 'media/2Site.png')
+    var currentImage = $(this);
+    
+    if (currentImage.attr('src') === 'media/3Site.png') {
+      currentImage.attr('src', 'media/3SiteHighlited.png');
+    } else {
+      currentImage.attr('src', 'media/3Site.png');
+    }
   });
 });
