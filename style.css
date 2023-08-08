@@ -521,3 +521,13 @@ input[type="range"]::-moz-range-thumb {
   font-size: 14px;
   font-weight: 500;
 }
+
+.structural-sim-model {
+  display: flex;
+  justify-content: center;
+}
+
+model-viewer {
+  width: 80vw;
+  height: 60vh;
+}
