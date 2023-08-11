@@ -69,7 +69,9 @@ console.log(slider2Value);
   // Now you can use slider1Value and slider2Value on this page
 var startButton = document.getElementById("start-button");
   var videoPlayer = document.getElementById("videoPlayer1");
-  var modelViewer = document.getElementById("modelViewer");
+  var modelViewer1 = document.getElementById("modelViewer1");
+  var modelViewer2 = document.getElementById("modelViewer2");
+  var modelViewer3 = document.getElementById("modelViewer3");
   var startMessage = document.getElementById("startMessage");
 
 var videoOptions = {
@@ -78,36 +80,40 @@ var videoOptions = {
     "3": "media/structuralSimulation3floor.mp4"
   };
 
-  var modelOptions = {
-    "1": "media/1floors.glb",
-    "2": "media/2floors.glb",
-    "3": "media/3floors.glb"
-  }
-
   startButton.addEventListener("click", playSelectedVideo);
 
   function playSelectedVideo() {
     var combination = slider2Value;
     var videoSrc = videoOptions[combination];
-    var modelSrc = modelOptions[combination];
 
     if (videoSrc) {
       videoPlayer.src = videoSrc;
       videoPlayer.play();
     }
-
-    if (modelSrc) {
-      modelViewer.src = modelSrc;
-    }
   }
 
+
   videoPlayer.addEventListener("ended", function() {
-    modelViewer.style.display = "block";
+    
+    // Hide all model viewer elements
+    modelViewer1.style.display = "none";
+    modelViewer2.style.display = "none";
+    modelViewer3.style.display = "none";
+
+    // Show the appropriate model viewer based on the slider value
+    if (slider2Value === 1) {
+      modelViewer1.style.display = "block";
+    } else if (sliderValue === 2) {
+      modelViewer2.style.display = "block";
+    } else if (sliderValue === 3) {
+      modelViewer3.style.display = "block";
+    }
+
     startMessage.style.display = "none";
+
     videoPlayer.style.display = "none";
-    videoPlayer.style.display = "none"; // Show the model viewer when video ends
-    console.log("model viewer showing");
   });
 });
+
 
 

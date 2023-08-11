@@ -536,7 +536,7 @@ input[type="range"]::-moz-range-thumb {
   height: 80vh;
 }
 
-model-viewer {
+model-viewer1 {
   width: 80vw;
   height: 60vh;
   display: none;
@@ -544,6 +544,29 @@ model-viewer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: -20;
+}
+
+model-viewer2 {
+  width: 80vw;
+  height: 60vh;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -20;
+}
+
+model-viewer3 {
+  width: 80vw;
+  height: 60vh;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -20;
 }
 
 .slider-with-value {
