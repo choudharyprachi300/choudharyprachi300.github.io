@@ -51,10 +51,49 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   buttonElementBack.addEventListener('click', function() {
-    window.location.href = 'simStep3.html'; // Replace with the desired URL of the button page
+    window.location.href = 'simStep2.html'; // Replace with the desired URL of the button page
   });
 
   textElement.addEventListener('click', function() {
     window.location.href = 'index.html'; // Replace with the desired URL of the text page
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var queryParams = new URLSearchParams(window.location.search);
+  var slider1Value = queryParams.get("slider1Value");
+  var slider2Value = queryParams.get("slider2Value");
+
+console.log(slider1Value);
+console.log(slider2Value);
+  // Now you can use slider1Value and slider2Value on this page
+var startButton = document.getElementById("start-button");
+  var videoPlayer = document.getElementById("videoPlayer1");
+  var modelViewer = document.getElementById("modelViewer");
+
+var videoOptions = {
+    "1": "media/structuralSimulation1floor.mp4",
+    "2": "media/structuralSimulation2floor.mp4",
+    "3": "media/structuralSimulation3floor.mp4"
+  };
+
+  startButton.addEventListener("click", playSelectedVideo);
+
+  function playSelectedVideo() {
+    var combination = slider2Value;
+    var videoSrc = videoOptions[combination];
+
+    if (videoSrc) {
+      videoPlayer.src = videoSrc;
+      videoPlayer.play();
+    }
+  }
+
+  videoPlayer.addEventListener("ended", function() {
+    modelViewer.style.display = "block";
+    videoPlayer.style.display = "none"; // Show the model viewer when video ends
+    console.log("model viewer showing");
+  });
+});
+
+

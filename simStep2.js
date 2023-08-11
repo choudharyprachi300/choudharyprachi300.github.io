@@ -58,9 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var buttonElementBack = document.querySelector(".button-right.back");
   var textElement = document.getElementById('myLink');
 
-  buttonElementNext.addEventListener('click', function() {
-    window.location.href = 'simStep3.html'; // Replace with the desired URL of the button page
-  });
+  
 
   buttonElementBack.addEventListener('click', function() {
     window.location.href = 'simStep1.html'; // Replace with the desired URL of the button page
@@ -69,4 +67,86 @@ document.addEventListener('DOMContentLoaded', function() {
   textElement.addEventListener('click', function() {
     window.location.href = 'index.html'; // Replace with the desired URL of the text page
   });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var slider = document.getElementById("mySlider1");
+  var sliderValue = document.getElementById("slider-value1");
+
+  console.log(sliderValue);
+
+  slider.addEventListener("input", function() {
+    var value = slider.value;
+    sliderValue.textContent = value;
+    sliderValue.setAttribute("data-value", value);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var slider = document.getElementById("mySlider2");
+  var sliderValue = document.getElementById("slider-value2");
+
+  console.log(sliderValue);
+
+  slider.addEventListener("input", function() {
+    var value = slider.value;
+    sliderValue.textContent = value;
+    sliderValue.setAttribute("data-value", value);
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var slider1 = document.getElementById("mySlider1");
+  var slider2 = document.getElementById("mySlider2");
+  var slider1Value = document.getElementById("slider-value1");
+  var slider2Value = document.getElementById("slider-value2");
+  var startButton = document.getElementById("start-button");
+  var nextButton = document.getElementById("next-button");
+  var videoPlayer = document.getElementById("videoPlayer");
+
+  var videoOptions = {
+    "15-1": "media/iteration1-1Floors.mp4",
+    "15-2": "media/iteration1-2Floors.mp4",
+    "15-3": "media/iteration1-3Floors.mp4",
+    "20-1": "media/iteration2-1Floors.mp4",
+    "20-2": "media/iteration2-2Floors.mp4",
+    "20-3": "media/iteration2-3Floors.mp4",
+    "25-1": "media/iteration3-1Floors.mp4",
+    "25-2": "media/iteration3-2Floors.mp4",
+    "25-3": "media/iteration3-3Floors.mp4"
+  };
+
+  slider1.addEventListener("input", updateSliderValue);
+  slider2.addEventListener("input", updateSliderValue);
+  startButton.addEventListener("click", playSelectedVideo);
+
+ nextButton.addEventListener("click", function() {
+    var combination = slider1.value + "-" + slider2.value;
+    var videoSrc = videoOptions[combination];
+
+    if (!videoPlayer.paused || (videoSrc && videoPlayer.currentTime === 0)) {
+      $('#message').fadeIn().delay(1500).fadeOut();
+    } else {
+      // Video has not been played yet, proceed to the next page
+      var slider1Value = slider1.value;
+      var slider2Value = slider2.value;
+      window.location.href = "simStep4.html?slider1Value=" + slider1Value + "&slider2Value=" + slider2Value; // Replace with the desired URL
+    }
+  });
+
+   function updateSliderValue() {
+    slider1Value.textContent = slider1.value;
+    slider2Value.textContent = slider2.value;
+  }
+
+  function playSelectedVideo() {
+    var combination = slider1.value + "-" + slider2.value;
+    var videoSrc = videoOptions[combination];
+
+    if (videoSrc) {
+      videoPlayer.src = videoSrc;
+      videoPlayer.play();
+    }
+  }
 });

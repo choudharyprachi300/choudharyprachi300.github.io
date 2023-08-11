@@ -20,7 +20,9 @@
 	</div>
 
 	<div class="structural-sim-model">
-		<model-viewer src="media/museum1.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" environment-image="legacy" exposure="0.48" shadow-softness="1"> </model-viewer>
+		<h2 class="start-sim-message">START SIMULATION</h2>
+		<video id="videoPlayer1" src="" type="video/mp4"></video>
+		<model-viewer src="media/museum1.glb" camera-controls poster="poster.webp" shadow-intensity="1" environment-image="legacy" exposure="0.48" shadow-softness="1" id="modelViewer"> </model-viewer>
 	</div>
 
 	<div class="hfFlex foot">
@@ -29,11 +31,11 @@
 		<div class="buttons">
 			<button class="button">STEP 1</button>
 			<button class="button">STEP 2</button>
-			<button class="button">STEP 3</button>
+			<button class="button button1">STEP 3</button>
 		</div>
 		</div>
 		<div class="buttons1 keys3">
-			<button class="button-right start">START</button>
+			<button class="button-right start" id="start-button">START</button>
 			<button class="button-right back">BACK</button>
 			<button class="button-right home">HOME</button>
 		</div>

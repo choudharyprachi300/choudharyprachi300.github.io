@@ -130,6 +130,7 @@ body.selected {
 #image{
   position:absolute;
   pointer-events: none;
+  z-index: 5000;
 }
 
 .hfFlex {
@@ -281,6 +282,12 @@ button:only-child {
 
 .sliderText {
   margin-right: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.sliderText-value {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -513,21 +520,75 @@ input[type="range"]::-moz-range-thumb {
 }
 
 #message {
-  position: absolute;
-  top: 82vh;
-  right: 70px;
-  text-align: center-width;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+    position: absolute;
+    bottom: 140px;
+    right: 55px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .structural-sim-model {
   display: flex;
   justify-content: center;
+  position: relative;
+  align-items: center;
+  height: 80vh;
 }
 
 model-viewer {
   width: 80vw;
   height: 60vh;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider-with-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+}
+
+.video-content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  heignt: 80vh;
+}
+
+#videoPlayer {
+  width: auto;
+  height: 60vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#videoPlayer1 {
+  width: auto;
+  height: 60vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start-sim-message {
+  position: absolute;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+
 }
