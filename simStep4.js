@@ -92,6 +92,10 @@ var videoOptions = {
     }
   }
 
+    modelViewer1.style.display = "none";
+    modelViewer2.style.display = "none";
+    modelViewer3.style.display = "none";
+
 
   videoPlayer.addEventListener("ended", function() {
     
