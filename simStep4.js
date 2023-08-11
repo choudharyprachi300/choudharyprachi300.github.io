@@ -103,9 +103,9 @@ var videoOptions = {
     // Show the appropriate model viewer based on the slider value
     if (slider2Value === 1) {
       modelViewer1.style.display = "block";
-    } else if (sliderValue === 2) {
+    } else if (slider2Value === 2) {
       modelViewer2.style.display = "block";
-    } else if (sliderValue === 3) {
+    } else if (slider2Value === 3) {
       modelViewer3.style.display = "block";
     }
 
