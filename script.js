@@ -11,15 +11,15 @@ $(document).mousemove(function(e) {
   var isSecondHalf = mouseX > windowWidth * (1/2)- (image.width() / 2);
 
   // Change the background image and other properties
-  if (isSecondHalf) {
-    $('body').addClass("selected");
-  } else {
-    $('body').removeClass("selected");
-  }
+  // if (isSecondHalf) {
+  //   $('body').addClass("selected");
+  // } else {
+  //   $('body').removeClass("selected");
+  // }
 
   // Change the image that follows the cursor
-  var cursorImage = isSecondHalf ? "media/icons/cursor2.png" : "media/icons/cursor1.png";
-  image.attr("src", cursorImage);
+  // var cursorImage = isSecondHalf ? "media/icons/cursor2.png" : "media/icons/cursor1.png";
+  // image.attr("src", cursorImage);
 
   // Animate the image to the target position
   image.stop().animate({
@@ -35,10 +35,10 @@ $(document).ready(function() {
   $(document).on("click", function(evt) {
     var mouseX = evt.pageX;
 
-    if (mouseX < halfScreenWidth) {
-      window.location.href = "simStep1.html";
-    }else if (mouseX >= halfScreenWidth) {
-      window.location.href = "renPage.html";
-    }
+    //if (mouseX < halfScreenWidth) {
+       window.location.href = "simStep1.html";
+    // }else if (mouseX >= halfScreenWidth) {
+    //   window.location.href = "renPage.html";
+    //}
   });
 });

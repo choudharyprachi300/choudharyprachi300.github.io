@@ -563,26 +563,28 @@ model-viewer {
 }
 
 #videoPlayer {
-  width: auto;
-  height: 60vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    width: auto;
+    height: 72vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    z-index: -23;
 }
 
 #videoPlayer1 {
-  width: auto;
-  height: 60vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    width: auto;
+    height: 70vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -49%);
+    z-index: -23;
 }
 
 .start-sim-message {
   position: absolute;
-  z-index: 0;
+  z-index: -40;
   position: absolute;
   top: 50%;
   left: 50%;

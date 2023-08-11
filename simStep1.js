@@ -80,7 +80,7 @@ $(document).ready(function() {
     var currentImage = $(this);
     
     if (currentImage.attr('src') === 'media/2Site.png') {
-      currentImage.attr('src', 'media/2SiteHighlited.png');
+      currentImage.attr('src', 'media/2SiteComingSoon.png');
     } else {
       currentImage.attr('src', 'media/2Site.png');
     }
@@ -94,7 +94,7 @@ $(document).ready(function() {
     var currentImage = $(this);
     
     if (currentImage.attr('src') === 'media/3Site.png') {
-      currentImage.attr('src', 'media/3SiteHighlited.png');
+      currentImage.attr('src', 'media/3SiteComingSoon.png');
     } else {
       currentImage.attr('src', 'media/3Site.png');
     }

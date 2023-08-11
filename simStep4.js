@@ -70,6 +70,7 @@ console.log(slider2Value);
 var startButton = document.getElementById("start-button");
   var videoPlayer = document.getElementById("videoPlayer1");
   var modelViewer = document.getElementById("modelViewer");
+  var startMessage = document.getElementById("startMessage");
 
 var videoOptions = {
     "1": "media/structuralSimulation1floor.mp4",
@@ -77,20 +78,33 @@ var videoOptions = {
     "3": "media/structuralSimulation3floor.mp4"
   };
 
+  var modelOptions = {
+    "1": "media/1floors.glb",
+    "2": "media/2floors.glb",
+    "3": "media/3floors.glb"
+  }
+
   startButton.addEventListener("click", playSelectedVideo);
 
   function playSelectedVideo() {
     var combination = slider2Value;
     var videoSrc = videoOptions[combination];
+    var modelSrc = modelOptions[combination];
 
     if (videoSrc) {
       videoPlayer.src = videoSrc;
       videoPlayer.play();
     }
+
+    if (modelSrc) {
+      modelViewer.src = modelSrc;
+    }
   }
 
   videoPlayer.addEventListener("ended", function() {
     modelViewer.style.display = "block";
+    startMessage.style.display = "none";
+    videoPlayer.style.display = "none";
     videoPlayer.style.display = "none"; // Show the model viewer when video ends
     console.log("model viewer showing");
   });
